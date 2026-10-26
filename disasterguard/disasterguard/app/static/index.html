@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DisasterGuard - Offline Disaster Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🛡️ DisasterGuard <small>offline AI disaster management</small></h1>
+  <div id="llm" class="pill">checking AI…</div>
+</header>
+<nav id="tabs">
+  <button data-tab="dash" class="active">Dashboard</button>
+  <button data-tab="report">Report incident</button>
+  <button data-tab="advisor">Safety advisor</button>
+  <button data-tab="resources">Resources</button>
+  <button data-tab="sitrep">Situation report</button>
+</nav>
+<main>
+  <section id="dash" class="tab active">
+    <div id="cards" class="cards"></div>
+    <h2>Incidents</h2>
+    <div id="incidents"></div>
+    <h2>Agent activity</h2>
+    <div id="logs" class="logs"></div>
+  </section>
+
+  <section id="report" class="tab">
+    <h2>Report an incident</h2>
+    <p class="muted">Describe what is happening in plain language. The agents will triage, allocate resources and draft an action plan.</p>
+    <textarea id="reportText" rows="5" placeholder="e.g. Flood water rising in Ramnagar, about 40 people stranded on rooftops including children, one person injured."></textarea>
+    <button id="reportBtn" class="primary">Submit to agents</button>
+    <div id="reportOut"></div>
+  </section>
+
+  <section id="advisor" class="tab">
+    <h2>Safety advisor</h2>
+    <p class="muted">Answers come from the built-in offline knowledge base (first aid, flood, earthquake, cyclone, fire, heatwave).</p>
+    <div id="chat" class="chat"></div>
+    <div class="row">
+      <input id="q" placeholder="How do I treat severe bleeding?">
+      <button id="askBtn" class="primary">Ask</button>
+    </div>
+  </section>
+
+  <section id="resources" class="tab"><h2>Resources</h2><div id="resList"></div></section>
+
+  <section id="sitrep" class="tab">
+    <h2>Situation report</h2>
+    <button id="srBtn" class="primary">Generate report</button>
+    <button id="srCopy">Copy</button>
+    <pre id="srOut"></pre>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
